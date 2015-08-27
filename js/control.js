@@ -31,7 +31,7 @@ $(document).ready(function() {
         if (json.http_code == 200)
           $.each(json.modulos, function(i, item) {
             //$.each(item.modulos, function(j, modulo) {
-              if (mod_id = item.id){
+              if (mod_id == item.id){
                 $("#module_name").html("<h1>"+item.nombre+"</h1>")
               }
               var itemo = '<option value="' + item.id + '">' + item.nombre + '</option>';
