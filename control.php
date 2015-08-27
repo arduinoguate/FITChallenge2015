@@ -91,7 +91,7 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/control.js"></script>
 
-  <div id="moduleModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div id="actionsModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
           <div class="modal-header">
