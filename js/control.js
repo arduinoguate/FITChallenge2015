@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+  var api = 'http://crea.arduinogt.com/v1/';
   var token = $("#sess_token").val();
   var mod_id = $("#modulo_id").val();
 
