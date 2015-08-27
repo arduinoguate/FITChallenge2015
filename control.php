@@ -107,7 +107,7 @@
                       <div class="form-group">
                           <label for="concept" class="col-sm-3 control-label">Izquierda</label>
                           <div class="col-sm-9">
-                              <select class="action_combo" id="a_izquierda" name="a_izquierda">
+                              <select class="form-control" id="a_izquierda" name="a_izquierda">
                               </select>
                           </div>
                       </div>
@@ -122,7 +122,7 @@
                       <div class="form-group">
                           <label for="concept" class="col-sm-3 control-label">Derecha</label>
                           <div class="col-sm-9">
-                            <select class="action_combo" id="a_derecha" name="a_derecha">
+                            <select class="form-control" id="a_derecha" name="a_derecha">
                             </select>
                           </div>
                       </div>
@@ -137,7 +137,7 @@
                       <div class="form-group">
                           <label for="concept" class="col-sm-3 control-label">Arriba</label>
                           <div class="col-sm-9">
-                            <select class="action_combo" id="a_arriba" name="a_arriba">
+                            <select class="form-control" id="a_arriba" name="a_arriba">
                             </select>
                           </div>
                       </div>
@@ -152,7 +152,7 @@
                       <div class="form-group">
                           <label for="concept" class="col-sm-3 control-label">Abajo</label>
                           <div class="col-sm-9">
-                            <select class="action_combo" id="a_abajo" name="a_abajo">
+                            <select class="form-control" id="a_abajo" name="a_abajo">
                             </select>
                           </div>
                       </div>
@@ -167,7 +167,7 @@
                       <div class="form-group">
                           <label for="concept" class="col-sm-3 control-label">Detener</label>
                           <div class="col-sm-9">
-                            <select class="action_combo" id="a_stop" name="a_stop">
+                            <select class="form-control" id="a_stop" name="a_stop">
                             </select>
                           </div>
                       </div>
