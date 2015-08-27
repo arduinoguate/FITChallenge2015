@@ -45,7 +45,7 @@
 			$usuario->columns['created_at'] = date("Y-m-d H:i:s");
 			$usuario->columns['updated_at'] = date("Y-m-d H:i:s");
 			$id = $usuario->insert();
-      if (is_null($id)){
+      if (!is_null($id)){
 				if (!$usuario->fetch_id(array('username' => $_POST['username']))){
 						echo json_encode(json_decode("{}"),JSON_UNESCAPED_SLASHES);
 						die();
