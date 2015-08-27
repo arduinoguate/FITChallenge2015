@@ -1,7 +1,12 @@
 <?php
   include 'config/config.php';
-
-
+  $usuario->fetch_id(array("username" => $_SESSION['username']));
+  $modulo = $usuario->columns['id_modulo'];
+  $action_id = "";
+  $up = "";
+  $down = "";
+  $left = "";
+  $right = "";
 
 ?>
 
@@ -30,7 +35,9 @@
   </head>
 
   <body>
-
+    <input type="hidden" id="sess_token" value="<?php echo $_SESSION['token'] ?>"/>
+	  <input type="hidden" id="sess_user" value="<?php echo $_SESSION['username'] ?>"/>
+    <input type="hidden" id="modulo_id" value="<?php echo $modulo ?>"/>
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -44,8 +51,8 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Seleccionar modulo</a></li>
-            <li class="active"><a href="#">Configurar</a></li>
+            <li class="active"><a id="seleccionar" href="#">Seleccionar modulo</a></li>
+            <li class="active"><a id="configurar" href="#">Configurar</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -56,19 +63,20 @@
       <div class="starter-template">
         <h1>Control Remoto</h1>
         <p class="lead">Aqui podremos controlar nuestro robot</p>
+        <p class="lead" id="module_name"></p>
       </div>
 
       <div class="row">
-        <div style="margin-bottom:5px;" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><a href="#" id="up" data-assigned="" data-value="" class="btn btn-info col-xs-12 col-sm-12 col-md-12 col-lg-12">Arriba</a></div>
+        <div style="margin-bottom:5px;" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><a href="#" id="up" data-assigned="<?php echo $action_id ?>" data-value="<?php echo $up ?>" class="btn btn-info col-xs-12 col-sm-12 col-md-12 col-lg-12">Arriba</a></div>
         <br/>
-        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><a href="#" id="lt" data-assigned="" data-value="" class="btn btn-info col-xs-12 col-sm-12 col-md-12 col-lg-12">Izquierda</a></div>
+        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><a href="#" id="lt" data-assigned="<?php echo $action_id ?>" data-value="<?php echo $left ?>" class="btn btn-info col-xs-12 col-sm-12 col-md-12 col-lg-12">Izquierda</a></div>
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
-        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><a href="#" id="rt" data-assigned="" data-value="" class="btn btn-info col-xs-12 col-sm-12 col-md-12 col-lg-12">Derecha</a></div>
+        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><a href="#" id="rt" data-assigned="<?php echo $action_id ?>" data-value="<?php echo $right ?>" class="btn btn-info col-xs-12 col-sm-12 col-md-12 col-lg-12">Derecha</a></div>
         <br/>
-        <div style="margin-top:5px;" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><a href="#" id="dn" data-assigned="" data-value="" class="btn btn-info col-xs-12 col-sm-12 col-md-12 col-lg-12">Abajo</a></div>
+        <div style="margin-top:5px;" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><a href="#" id="dn" data-assigned="<?php echo $action_id ?>" data-value="<?php echo $down ?>" class="btn btn-info col-xs-12 col-sm-12 col-md-12 col-lg-12">Abajo</a></div>
 
         <br/>
-        <div style="margin-top:10px;" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><a href="#" id="st" data-assigned="" data-value="" class="btn btn-info col-xs-12 col-sm-12 col-md-12 col-lg-12">Detenerse</a></div>
+        <div style="margin-top:10px;" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><a href="#" id="st" data-assigned="<?php echo $action_id ?>" data-value="<?php echo $stop ?>" class="btn btn-info col-xs-12 col-sm-12 col-md-12 col-lg-12">Detenerse</a></div>
       </div>
 
     </div><!-- /.container -->
@@ -163,6 +171,42 @@
   	    </div>
       </div>
     </div>
+  </div>
+
+  <div id="moduleModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <form action="post/modulo.php" method="post">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">✕</button>
+    	        <h3>Seleccionar modulo</h3>
+    	    </div>
+            <div class="modal-body" style="text-align:center;">
+                <div class="panel panel-default">
+                    <div class="panel-body form-horizontal payment-form">
+                    	<input type="hidden" id="act_module" />
+                    	<input type="hidden" id="act_cmd" />
+                        <div class="form-group">
+                            <label for="status" class="col-sm-3 control-label">Modulo</label>
+                            <div class="col-sm-9">
+                                <select class="form-control" id="modulo" name="modulo">
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12 text-right">
+                                <button type="button" id="add_action_btn" class="btn btn-default preview-add-button">
+                                    <span class="glyphicon glyphicon-plus"></span> <?php echo $locale['form_add']; ?>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    	    </div>
+        </div>
+      </div>
+    </form>
   </div>
 
 </body></html>
