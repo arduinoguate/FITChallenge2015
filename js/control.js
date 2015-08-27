@@ -11,6 +11,12 @@ $(document).ready(function() {
     $('#moduleModal').modal("show");
   });
 
+  $("#configurar").click(function(e) {
+    e.preventDefault();
+
+    $('#actionsModal').modal("show");
+  });
+
   function load_devices() {
     //LOAD DEVICES
     $("#user-info").hide();
