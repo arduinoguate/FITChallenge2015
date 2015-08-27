@@ -66,7 +66,7 @@ $(document).ready(function() {
         json = resp.responseJSON;
         console.log(json);
         $.each(json.acciones, function(i, item) {
-
+          info = '<option value="'+item.id+'">' + item.nombre + '</option>';
 
           $('.action_combo').append(info);
 
