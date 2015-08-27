@@ -198,7 +198,7 @@
                         <div class="form-group">
                             <div class="col-sm-12 text-right">
                                 <button type="button" id="add_action_btn" class="btn btn-default preview-add-button">
-                                    <span class="glyphicon glyphicon-plus"></span> <?php echo $locale['form_add']; ?>
+                                    <span class="glyphicon glyphicon-plus"></span> Cambiar
                                 </button>
                             </div>
                         </div>

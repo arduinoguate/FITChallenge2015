@@ -28,6 +28,7 @@ $(document).ready(function() {
       complete: function(resp) {
         json = resp.responseJSON;
         console.log(json);
+        console.log("GOGO");
         if (json.http_code == 200)
           $.each(json, function(i, item) {
             $.each(item, function(j, modulo) {
