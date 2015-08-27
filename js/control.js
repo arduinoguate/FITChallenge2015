@@ -30,14 +30,14 @@ $(document).ready(function() {
         console.log(json);
         console.log("GOGO");
         if (json.http_code == 200)
-          $.each(json, function(i, item) {
-            $.each(item.modulos, function(j, modulo) {
-              if (mod_id = modulo.id){
-                $("#module_name").html("<h1>"+modulo.nombre+"</h1>")
+          $.each(json.modulos, function(i, item) {
+            //$.each(item.modulos, function(j, modulo) {
+              if (mod_id = item.id){
+                $("#module_name").html("<h1>"+item.nombre+"</h1>")
               }
-              var itemo = '<option value="' + modulo.id + '">' + modulo.nombre + '</option>';
+              var itemo = '<option value="' + item.id + '">' + item.nombre + '</option>';
               $("#modulo").append(itemo);
-            });
+            //});
           });
       },
       error: function(jqXHR, textStatus, errorThrown) {
