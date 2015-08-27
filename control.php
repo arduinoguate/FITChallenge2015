@@ -48,8 +48,15 @@
     <div class="container">
 
       <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+        <h1>Control Remoto</h1>
+        <p class="lead">Aqui podremos controlar nuestro robot</p>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12"><a href="#" id="up" data-assigned="" data-value="" class="btn">Arriba</a></div>
+        <div class="col-xs-6"><a href="#" id="lt" data-assigned="" data-value="" class="btn">Izquierda</a></div>
+        <div class="col-xs-6"><a href="#" id="rt" data-assigned="" data-value="" class="btn">Derecha</a></div>
+        <div class="col-xs-12"><a href="#" id="dn" data-assigned="" data-value="" class="btn">Abajo</a></div>
       </div>
 
     </div><!-- /.container -->
