@@ -2,7 +2,7 @@
   session_start();
   include 'config/config.php';
   $usuario->fetch_id(array("username" => $_SESSION['username']));
-  $modulo = $usuario->columns['id_modulo'];
+  echo $modulo = $usuario->columns['id_modulo'];
   $action_id = "";
   $up = "";
   $down = "";
