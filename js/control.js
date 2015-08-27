@@ -31,12 +31,12 @@ $(document).ready(function() {
         console.log("GOGO");
         if (json.http_code == 200)
           $.each(json, function(i, item) {
-            $.each(item, function(j, modulo) {
-              if (mod_id = modulo.id){
-                $("#module_name").html("<h1>"+modulo.nombre+"</h1>")
+            $.each(item, function(j, modulos) {
+              if (mod_id = modulos.id){
+                $("#module_name").html("<h1>"+modulos.nombre+"</h1>")
               }
-              var item = '<option value="' + modulo.id + '">' + modulo.nombre + '</option>';
-              $("#modulo").append(item);
+              var itemo = '<option value="' + modulos.id + '">' + modulos.nombre + '</option>';
+              $("#modulo").append(itemo);
             });
           });
       },
