@@ -1,3 +1,10 @@
+<?php
+  include 'config/config.php';
+
+
+
+?>
+
 <html lang="en"><head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +14,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Starter Template for Bootstrap</title>
+    <title>FIT CONTROL</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -37,6 +44,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Seleccionar modulo</a></li>
             <li class="active"><a href="#">Configurar</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -74,5 +82,87 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/control.js"></script>
 
+  <div id="moduleModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">✕</button>
+  	        <h3>Configurar Acciones</h3>
+  	    </div>
+          <div class="modal-body" style="text-align:center;">
+              <div class="panel panel-default">
+                  <div class="panel-body form-horizontal payment-form">
+                  	<input type="hidden" id="act_module" />
+                  	<input type="hidden" id="act_cmd" />
+
+                      <div class="form-group">
+                          <label for="concept" class="col-sm-3 control-label">Izquierda</label>
+                          <div class="col-sm-9">
+                              <input type="text" class="form-control" id="mod_name" name="mod_name">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="concept" class="col-sm-3 control-label">Valor</label>
+                          <div class="col-sm-9">
+                              <input type="text" class="form-control" id="mod_name" name="mod_name">
+                          </div>
+                      </div>
+                      <hr/>
+
+                      <div class="form-group">
+                          <label for="concept" class="col-sm-3 control-label">Derecha</label>
+                          <div class="col-sm-9">
+                              <input type="text" class="form-control" id="mod_name" name="mod_name">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="concept" class="col-sm-3 control-label">Valor</label>
+                          <div class="col-sm-9">
+                              <input type="text" class="form-control" id="mod_name" name="mod_name">
+                          </div>
+                      </div>
+                      <hr/>
+
+                      <div class="form-group">
+                          <label for="concept" class="col-sm-3 control-label">Arriba</label>
+                          <div class="col-sm-9">
+                              <input type="text" class="form-control" id="mod_name" name="mod_name">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="concept" class="col-sm-3 control-label">Abajo</label>
+                          <div class="col-sm-9">
+                              <input type="text" class="form-control" id="mod_name" name="mod_name">
+                          </div>
+                      </div>
+                      <hr/>
+
+                      <div class="form-group">
+                          <label for="concept" class="col-sm-3 control-label">Izquierda</label>
+                          <div class="col-sm-9">
+                              <input type="text" class="form-control" id="mod_name" name="mod_name">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="concept" class="col-sm-3 control-label">Valor</label>
+                          <div class="col-sm-9">
+                              <input type="text" class="form-control" id="mod_name" name="mod_name">
+                          </div>
+                      </div>
+                      <hr/>
+
+                      <div class="form-group">
+                          <div class="col-sm-12 text-right">
+                              <button type="button" id="add_module_btn" class="btn btn-default preview-add-button">
+                                  <span class="glyphicon glyphicon-plus"></span> Guardar
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+  	    </div>
+      </div>
+    </div>
+  </div>
 
 </body></html>
