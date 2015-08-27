@@ -33,13 +33,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="#">FIT Control</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li class="active"><a href="#">Configurar</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -53,10 +51,12 @@
       </div>
 
       <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><a href="#" id="up" data-assigned="" data-value="" class="btn btn-info">Arriba</a></div>
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"><a href="#" id="lt" data-assigned="" data-value="" class="btn btn-info">Izquierda</a></div>
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"><a href="#" id="rt" data-assigned="" data-value="" class="btn btn-info">Derecha</a></div>
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><a href="#" id="dn" data-assigned="" data-value="" class="btn btn-info">Abajo</a></div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><a href="#" id="up" data-assigned="" data-value="" class="btn btn-info col-xs-12 col-sm-12 col-md-12 col-lg-12">Arriba</a></div>
+        <br/>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"><a href="#" id="lt" data-assigned="" data-value="" class="btn btn-info col-xs-6 col-sm-6 col-md-6 col-lg-6">Izquierda</a></div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"><a href="#" id="rt" data-assigned="" data-value="" class="btn btn-info col-xs-6 col-sm-6 col-md-6 col-lg-6">Derecha</a></div>
+        <br/>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><a href="#" id="dn" data-assigned="" data-value="" class="btn btn-info col-xs-12 col-sm-12 col-md-12 col-lg-12">Abajo</a></div>
       </div>
 
     </div><!-- /.container -->
