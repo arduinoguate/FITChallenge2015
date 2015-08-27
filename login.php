@@ -10,7 +10,7 @@
 <html>
 
 <head>
-  <title>CREA - Dashboard</title>
+  <title>Fit Challenge</title>
   <meta charset="">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" media="screen" href="css/login.css">
@@ -29,7 +29,7 @@
 <body>
   <div class="container">
     <div class="page-header" style="color:#fff;">
-      <center><h1 class="logo">CREA Dashboard<small> <?php echo $locale['login_credentials']; ?></small></h1></center>
+      <center><h1 class="logo">FIT 2015<small> <?php echo $locale['login_credentials']; ?></small></h1></center>
     </div>
     <div class="login-container">
       <div id="output"></div>
