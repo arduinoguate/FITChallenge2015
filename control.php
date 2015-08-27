@@ -53,10 +53,10 @@
       </div>
 
       <div class="row">
-        <div class="col-xs-12"><a href="#" id="up" data-assigned="" data-value="" class="btn">Arriba</a></div>
-        <div class="col-xs-6"><a href="#" id="lt" data-assigned="" data-value="" class="btn">Izquierda</a></div>
-        <div class="col-xs-6"><a href="#" id="rt" data-assigned="" data-value="" class="btn">Derecha</a></div>
-        <div class="col-xs-12"><a href="#" id="dn" data-assigned="" data-value="" class="btn">Abajo</a></div>
+        <div class="col-xs-12 col-sm-12 col-md-12"><a href="#" id="up" data-assigned="" data-value="" class="btn btn-info">Arriba</a></div>
+        <div class="col-xs-6 col-sm-6 col-md-6"><a href="#" id="lt" data-assigned="" data-value="" class="btn btn-info">Izquierda</a></div>
+        <div class="col-xs-6 col-sm-6 col-md-6"><a href="#" id="rt" data-assigned="" data-value="" class="btn btn-info">Derecha</a></div>
+        <div class="col-xs-12 col-sm-12 col-md-12"><a href="#" id="dn" data-assigned="" data-value="" class="btn btn-info">Abajo</a></div>
       </div>
 
     </div><!-- /.container -->
