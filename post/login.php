@@ -1,5 +1,5 @@
 <?php
-	$include '../config/config.php';
+	include '../config/config.php';
 
 	$user = "13a3b20fa41aa80636cffe064abd3e07";
 	$pass = "ac2097a20d8b989d1b4305bfdc170b4d";
