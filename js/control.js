@@ -41,7 +41,7 @@ $(document).ready(function() {
       },
       error: function(jqXHR, textStatus, errorThrown) {
         if (jqXHR.status != '422') {
-          window.location = "logout.php";
+          //window.location = "logout.php";
         } else
           $('#devices').append('<li class="list-group-item"><span class="glyphicon glyphicon-remove text-primary"></span>No hay dispositivos</li>');
       },
