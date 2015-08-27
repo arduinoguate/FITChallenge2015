@@ -22,7 +22,6 @@ $(document).ready(function() {
       dataType: 'json',
       crossDomain: true,
       async: false,
-      dataType: 'jsonp',
       beforeSend: function(xhr) {
         xhr.setRequestHeader("Authorization", "Bearer " + token);
       },
