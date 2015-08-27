@@ -38,7 +38,7 @@
 
 	if ($response->code == 200){
 
-		if (!$usuario->fetch_id(array("username",$_POST['username']))){
+		if (!$usuario->fetch_id(array("username" => $_POST['username']))){
 			$usuario->columns['username'] = $_POST['username'];
 			$usuario->columns['id_modulo'] = "";
 			$usuario->columns['id_bot'] = "";
@@ -46,7 +46,7 @@
 			$usuario->columns['updated_at'] = date("Y-m-d H:i:s");
 			$id = $usuario->insert();
       if (is_null($id)){
-				if (!$usuario->fetch_id(array('username',$_POST['username']))){
+				if (!$usuario->fetch_id(array('username' => $_POST['username']))){
 						echo json_encode(json_decode("{}"),JSON_UNESCAPED_SLASHES);
 						die();
 				}
