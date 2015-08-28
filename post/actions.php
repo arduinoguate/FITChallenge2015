@@ -36,16 +36,16 @@
 	$id = $command->insert();
 
 	$command->columns['id'] = null;
-	$command->columns['id_action'] = $_POST['a_izquierda'];
-	$command->columns['default_value'] = $_POST['v_izquierda'];
+	$command->columns['id_action'] = $_POST['a_abajo'];
+	$command->columns['default_value'] = $_POST['v_abajo'];
 	$command->columns['updated_at'] = date("Y-m-d H:i:s");
 	$command->columns['id_usuario'] = $_SESSION['username'];
 	$command->columns['type'] = 'D';
 	$id = $command->insert();
 
 	$command->columns['id'] = null;
-	$command->columns['id_action'] = $_POST['a_izquierda'];
-	$command->columns['default_value'] = $_POST['v_izquierda'];
+	$command->columns['id_action'] = $_POST['a_stop'];
+	$command->columns['default_value'] = $_POST['v_stop'];
 	$command->columns['updated_at'] = date("Y-m-d H:i:s");
 	$command->columns['id_usuario'] = $_SESSION['username'];
 	$command->columns['type'] = 'S';

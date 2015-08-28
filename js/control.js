@@ -17,6 +17,33 @@ $(document).ready(function() {
     $('#actionsModal').modal("show");
   });
 
+  $("#up").click(function(e) {
+    e.preventDefault();
+
+    execute_action($(this).data("assigned"), $(this).data("value"));
+
+  });
+  $("#lt").click(function(e) {
+    e.preventDefault();
+
+    execute_action($(this).data("assigned"), $(this).data("value"));
+  });
+  $("#rt").click(function(e) {
+    e.preventDefault();
+
+    execute_action($(this).data("assigned"), $(this).data("value"));
+  });
+  $("#dn").click(function(e) {
+    e.preventDefault();
+
+    execute_action($(this).data("assigned"), $(this).data("value"));
+  });
+  $("#st").click(function(e) {
+    e.preventDefault();
+
+    execute_action($(this).data("assigned"), $(this).data("value"));
+  });
+
   function load_devices() {
     //LOAD DEVICES
     $.ajax({
@@ -52,6 +79,35 @@ $(document).ready(function() {
     });
   }
 
+  function execute_action(value, action) {
+    $.ajax({
+      url: api + "module/" + mod_id + '/execute-action',
+      type: 'PUT',
+      dataType: 'json',
+      crossDomain: true,
+      async: false,
+      data: "value=" + value + "&action=" + action,
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader("Authorization", "Bearer " + token);
+      },
+      complete: function(resp) {
+        json = resp.responseJSON;
+        console.log(json);
+        get_modulo(mod);
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+        if (jqXHR.status != '422') {
+          window.location = "logout.php";
+        } else {
+          if (jqXHR.responseJSON.code == 2)
+            show_alert("Error de validacion de campos");
+          else
+            show_alert("Error general");
+        }
+      },
+    });
+  }
+
   function get_actions(){
     $.ajax({
       url: api + "module/" + mod_id + '/actions',
@@ -70,23 +126,6 @@ $(document).ready(function() {
 
           $('.action_combo').append(info);
 
-        });
-
-        $(".send_action").click(function(e) {
-          e.preventDefault();
-          id = $(this).data("act");
-          mod = $("#" + id).data("modulo");
-          value = $("#" + id).val();
-
-          execute_action(mod, value, id);
-        });
-
-        $(".delete_action").click(function(e) {
-          e.preventDefault();
-          id = $(this).data("act");
-          mod = $("#" + id).data("modulo");
-
-          delete_action(mod, id);
         });
 
       },

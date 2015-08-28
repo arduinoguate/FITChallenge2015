@@ -1,13 +1,42 @@
 <?php
   session_start();
   include 'config/config.php';
+  $user = $_SESSION['username'];
+  $usuario->fetch_id(array("username" => $_SESSION['username']));
   $usuario->fetch_id(array("username" => $_SESSION['username']));
   $modulo = $usuario->columns['id_modulo'];
-  $action_id = "";
-  $up = "";
-  $down = "";
-  $left = "";
-  $right = "";
+
+  $q_list = $command->fetch("id_usuario = '$user' AND type = 'U'");
+  if (count($q_list) > 0){
+    $action_u = $q_list[0]->columns['id_action'];
+    $up = $q_list[0]->columns['default_value'];
+  }
+
+  $q_list = $command->fetch("id_usuario = '$user' AND type = 'D'");
+  if (count($q_list) > 0){
+    $action_d = $q_list[0]->columns['id_action'];
+    $down = $q_list[0]->columns['default_value'];
+  }
+
+  $q_list = $command->fetch("id_usuario = '$user' AND type = 'L'");
+  if (count($q_list) > 0){
+    $action_l = $q_list[0]->columns['id_action'];
+    $left = $q_list[0]->columns['default_value'];
+  }
+
+  $q_list = $command->fetch("id_usuario = '$user' AND type = 'R'");
+  if (count($q_list) > 0){
+    $action_r = $q_list[0]->columns['id_action'];
+    $right = $q_list[0]->columns['default_value'];
+  }
+
+  $q_list = $command->fetch("id_usuario = '$user' AND type = 'S'");
+  if (count($q_list) > 0){
+    $action_s = $q_list[0]->columns['id_action'];
+    $stop = $q_list[0]->columns['default_value'];
+  }
+
+
 
 ?>
 
