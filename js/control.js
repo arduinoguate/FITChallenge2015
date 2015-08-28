@@ -79,7 +79,7 @@ $(document).ready(function() {
     });
   }
 
-  function execute_action(value, action) {
+  function execute_action(action, value) {
     $.ajax({
       url: api + "module/" + mod_id + '/execute-action',
       type: 'PUT',
