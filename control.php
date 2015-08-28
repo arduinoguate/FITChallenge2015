@@ -94,6 +94,7 @@
           <ul class="nav navbar-nav">
             <li class="active"><a id="seleccionar" href="#">Seleccionar modulo</a></li>
             <li class="active"><a id="configurar" href="#">Configurar</a></li>
+            <li class="active"><a id="configurar" href="logout.php">Salir</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
