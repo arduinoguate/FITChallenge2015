@@ -7,7 +7,7 @@
 	$q_list = $command->fetch("id_usuario = '$usuario'");
 	if (count($q_list) > 0){
 		foreach ($q_list as $q_item) {
-			$q_item->->delete();
+			$q_item->delete();
 		}
 	}
 
