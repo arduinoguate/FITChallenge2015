@@ -6,6 +6,17 @@
   $usuario->fetch_id(array("username" => $_SESSION['username']));
   $modulo = $usuario->columns['id_modulo'];
 
+    $action_u = "";
+    $up = "";
+    $action_d = "";
+    $down = "";
+    $action_l = "";
+    $left = "";
+    $action_r = "";
+    $right = "";
+    $action_s = "";
+    $stop = "";
+
   $q_list = $command->fetch("id_usuario = '$user' AND type = 'U'");
   if (count($q_list) > 0){
     $action_u = $q_list[0]->columns['id_action'];
@@ -97,16 +108,16 @@
       </div>
 
       <div class="row">
-        <div style="margin-bottom:5px;" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><a href="#" id="up" data-assigned="<?php echo $action_id ?>" data-value="<?php echo $up ?>" class="btn btn-info col-xs-12 col-sm-12 col-md-12 col-lg-12">Arriba</a></div>
+        <div style="margin-bottom:5px;" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><a href="#" id="up" data-assigned="<?php echo $action_u ?>" data-value="<?php echo $up ?>" class="btn btn-info col-xs-12 col-sm-12 col-md-12 col-lg-12">Arriba</a></div>
         <br/>
-        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><a href="#" id="lt" data-assigned="<?php echo $action_id ?>" data-value="<?php echo $left ?>" class="btn btn-info col-xs-12 col-sm-12 col-md-12 col-lg-12">Izquierda</a></div>
+        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><a href="#" id="lt" data-assigned="<?php echo $action_l ?>" data-value="<?php echo $left ?>" class="btn btn-info col-xs-12 col-sm-12 col-md-12 col-lg-12">Izquierda</a></div>
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
-        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><a href="#" id="rt" data-assigned="<?php echo $action_id ?>" data-value="<?php echo $right ?>" class="btn btn-info col-xs-12 col-sm-12 col-md-12 col-lg-12">Derecha</a></div>
+        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><a href="#" id="rt" data-assigned="<?php echo $action_r ?>" data-value="<?php echo $right ?>" class="btn btn-info col-xs-12 col-sm-12 col-md-12 col-lg-12">Derecha</a></div>
         <br/>
-        <div style="margin-top:5px;" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><a href="#" id="dn" data-assigned="<?php echo $action_id ?>" data-value="<?php echo $down ?>" class="btn btn-info col-xs-12 col-sm-12 col-md-12 col-lg-12">Abajo</a></div>
+        <div style="margin-top:5px;" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><a href="#" id="dn" data-assigned="<?php echo $action_d ?>" data-value="<?php echo $down ?>" class="btn btn-info col-xs-12 col-sm-12 col-md-12 col-lg-12">Abajo</a></div>
 
         <br/>
-        <div style="margin-top:10px;" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><a href="#" id="st" data-assigned="<?php echo $action_id ?>" data-value="<?php echo $stop ?>" class="btn btn-info col-xs-12 col-sm-12 col-md-12 col-lg-12">Detenerse</a></div>
+        <div style="margin-top:10px;" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><a href="#" id="st" data-assigned="<?php echo $action_s ?>" data-value="<?php echo $stop ?>" class="btn btn-info col-xs-12 col-sm-12 col-md-12 col-lg-12">Detenerse</a></div>
       </div>
 
     </div><!-- /.container -->
