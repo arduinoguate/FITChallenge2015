@@ -2,8 +2,9 @@
 	session_start();
 	include '../config/config.php';
 
+	$usuario = $_SESSION['username'];
 	$q_list = array();
-	$q_list = $command->fetch("id_usuario = '$_SESSION['username']'");
+	$q_list = $command->fetch("id_usuario = '$usuario'");
 	if (count($q_list) > 0){
 		foreach ($q_list as $q_item) {
 			$q_item->->delete();
