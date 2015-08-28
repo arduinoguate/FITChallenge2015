@@ -92,6 +92,7 @@
     <script src="js/control.js"></script>
 
   <div id="actionsModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <form action="post/actions.php" method="post">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
           <div class="modal-header">
@@ -114,7 +115,7 @@
                       <div class="form-group">
                           <label for="concept" class="col-sm-3 control-label">Valor</label>
                           <div class="col-sm-9">
-                              <input type="text" class="form-control" id="mod_name" name="mod_name">
+                              <input type="text" class="form-control" id="v_izquierda" name="v_izquierda">
                           </div>
                       </div>
                       <hr/>
@@ -129,7 +130,7 @@
                       <div class="form-group">
                           <label for="concept" class="col-sm-3 control-label">Valor</label>
                           <div class="col-sm-9">
-                              <input type="text" class="form-control" id="mod_name" name="mod_name">
+                              <input type="text" class="form-control" id="v_derecha" name="v_derecha">
                           </div>
                       </div>
                       <hr/>
@@ -144,7 +145,7 @@
                       <div class="form-group">
                           <label for="concept" class="col-sm-3 control-label">Valor</label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control" id="mod_name" name="mod_name">
+                            <input type="text" class="form-control" id="v_arriba" name="v_arriba">
                           </div>
                       </div>
                       <hr/>
@@ -159,7 +160,7 @@
                       <div class="form-group">
                           <label for="concept" class="col-sm-3 control-label">Valor</label>
                           <div class="col-sm-9">
-                              <input type="text" class="form-control" id="mod_name" name="mod_name">
+                              <input type="text" class="form-control" id="v_abajo" name="v_abajo">
                           </div>
                       </div>
                       <hr/>
@@ -174,7 +175,7 @@
                       <div class="form-group">
                           <label for="concept" class="col-sm-3 control-label">Valor</label>
                           <div class="col-sm-9">
-                              <input type="text" class="form-control" id="mod_name" name="mod_name">
+                              <input type="text" class="form-control" id="v_stop" name="v_stop">
                           </div>
                       </div>
                       <hr/>
@@ -182,15 +183,16 @@
                       <div class="form-group">
                           <div class="col-sm-12 text-right">
                               <button type="button" id="add_module_btn" class="btn btn-default preview-add-button">
-                                  <span class="glyphicon glyphicon-plus"></span> Guardar
+                                  <input type="submit" id="add_action_btn" class="btn btn-default preview-add-button" value="Cambiar"/>
                               </button>
                           </div>
                       </div>
                   </div>
               </div>
-  	    </div>
+    	    </div>
+        </div>
       </div>
-    </div>
+    </form>
   </div>
 
   <div id="moduleModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
